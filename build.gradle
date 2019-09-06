@@ -1,0 +1,48 @@
+plugins {
+	id "org.jetbrains.kotlin.jvm" version "1.3.50"
+	id "org.jetbrains.kotlin.plugin.spring" version "1.3.50"
+	id "org.springframework.boot" version "2.1.8.RELEASE" apply false
+	id "io.spring.dependency-management" version "1.0.8.RELEASE"
+	id "maven-publish"
+	id "com.dorongold.task-tree" version "1.4"
+	id "io.gitlab.arturbosch.detekt" version "1.0.1"
+}
+
+group = 'kz.btsd.bot'
+version = '1.0.0'
+
+def scenarioSdkVersion = '1.0.0'
+def formBuilderVersion = '1.0.0'
+def botApiContractVersion = '1.0.0'
+def coroutinesVersion = '1.3.1'
+def springBootVersion = "2.1.8.RELEASE"
+
+compileKotlin {
+	kotlinOptions {
+		freeCompilerArgs = ["-Xjsr305=strict"]
+		jvmTarget = "11"
+	}
+}
+compileTestKotlin {
+	kotlinOptions {
+		freeCompilerArgs = ["-Xjsr305=strict"]
+		jvmTarget = "11"
+	}
+}
+
+repositories {
+	mavenLocal()
+	mavenCentral()
+}
+
+dependencies {
+	implementation("org.jetbrains.kotlin:kotlin-stdlib")
+	implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion")
+	implementation("org.jetbrains.kotlin:kotlin-reflect")
+	implementation("org.springframework.boot:spring-boot-starter:$springBootVersion")
+	implementation("kz.btsd.bot:bot-scenario-sdk:$scenarioSdkVersion")
+	implementation("kz.btsd.bot:form-builder:$formBuilderVersion")
+	implementation("kz.btsd:bot-api-contract:$botApiContractVersion")
+
+	testImplementation("org.springframework.boot:spring-boot-starter-test:$springBootVersion")
+}

@@ -1,0 +1,7 @@
+bot.api.url: https://messapi.btsdapps.net/bot/v1/
+# use MasterService to get it
+token: YOUR_TOKEN_HERE
+logging.level.kz: TRACE
+
+sdk.scenario.defaultErrorMessage: "Сообщение не может быть прочитано. Воспользуйтесь меню данного сервиса для вызова нужной функции или убедитесь, что отправляете понятные для данного сервиса команды"
+sdk.scenario.defaultRequestEnumErrorMessage: "Выберите из предложенных вариантов"

@@ -1,0 +1,133 @@
+{
+  "form": {
+    "id": "form_1",
+    "header": {
+      "type": "title",
+      "title": "Конвертация",
+      "options": {
+        "closeable": true
+      }
+    },
+    "content": [
+      {
+        "id": "from",
+        "type": "catalog",
+        "title": "Из",
+        "placeholder": "placeholder",
+        "default_value": {
+          "id": "usd",
+          "title": "USD",
+          "description": "Доллар США"
+        },
+        "validations_rules": [
+          {
+            "type": "required",
+            "value": "true",
+            "error": "Поле не должно быть пустым"
+          }
+        ],
+        "catalog": {
+          "options": {
+            "title": "Выберите валюту",
+            "search_enabled": false,
+            "closeable": true
+          },
+          "items": [
+            {
+              "id": "usd",
+              "title": "USD",
+              "description": "Доллар США"
+            },
+            {
+              "id": "eur",
+              "title": "EUR",
+              "description": "Евро"
+            },
+            {
+              "id": "KZT",
+              "title": "KZT",
+              "description": "Казахстанский тенге"
+            },
+            {
+              "id": "RUB",
+              "title": "RUB",
+              "description": "Российский рубль"
+            }
+          ]
+        }
+      },
+      {
+        "id": "to",
+        "type": "catalog",
+        "title": "В",
+        "placeholder": "placeholder",
+        "default_value": {
+          "id": "KZT",
+          "title": "KZT",
+          "description": "Казахстанский тенге"
+        },
+        "validations_rules": [
+          {
+            "type": "required",
+            "value": "true",
+            "error": "Поле не должно быть пустым"
+          }
+        ],
+        "catalog": {
+          "options": {
+            "title": "Выберите валюту",
+            "search_enabled": false,
+            "closeable": true
+          },
+          "items": [
+            {
+              "id": "usd",
+              "title": "USD",
+              "description": "Доллар США"
+            },
+            {
+              "id": "eur",
+              "title": "EUR",
+              "description": "Евро"
+            },
+            {
+              "id": "KZT",
+              "title": "KZT",
+              "description": "Казахстанский тенге"
+            },
+            {
+              "id": "RUB",
+              "title": "RUB",
+              "description": "Российский рубль"
+            }
+          ]
+        }
+      },
+      {
+        "id": "sum",
+        "type": "input",
+        "title": "Сумма",
+        "placeholder": "Cумма",
+        "validations_rules": [
+          {
+            "type": "required",
+            "value": "true",
+            "error": "Поле не должно быть пустым"
+          }
+        ],
+        "options": {
+          "input_type": "number"
+        }
+      },
+      {
+        "id": "submit",
+        "type": "submit",
+        "title": "РАССЧИТАТЬ",
+        "form_action": {
+          "action": "send_message",
+          "data_template": "{form_1.sum} {form_1.from} в {form_1.to}"
+        }
+      }
+    ]
+  }
+}
