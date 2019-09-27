@@ -31,7 +31,7 @@ compileTestKotlin {
 }
 
 repositories {
-	mavenLocal()
+//	mavenLocal()
 	mavenCentral()
 }
 
@@ -40,8 +40,8 @@ dependencies {
 	implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.springframework.boot:spring-boot-starter:$springBootVersion")
-	implementation("kz.btsd.bot:bot-scenario-sdk:$scenarioSdkVersion")
-	implementation("kz.btsd.bot:form-builder:$formBuilderVersion")
+	implementation("kz.btsd:bot-scenario-sdk:$scenarioSdkVersion")
+	implementation("kz.btsd:form-builder:$formBuilderVersion")
 	implementation("kz.btsd:bot-api-contract:$botApiContractVersion")
 
 	testImplementation("org.springframework.boot:spring-boot-starter-test:$springBootVersion")
